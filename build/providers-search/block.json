@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "begincare/providers-search",
+  "version": "0.1.0",
+  "title": "Providers Search",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "",
+  "example": {},
+  "supports": {
+    "html": false,
+    "color": {
+      "background": true
+    }
+  },
+  "attributes": {
+    "searchDisplay": {
+      "type": "string",
+      "default": "___bc__providerSearch_auto"
+    },
+    "targetPage": {
+      "type": "string"
+    },
+    "openResultsInNewPage": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "textdomain": "begincare",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

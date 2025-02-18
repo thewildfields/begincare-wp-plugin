@@ -1,0 +1,32 @@
+{
+	"name": "begincare",
+	"version": "0.1.0",
+	"description": "Example block scaffolded with Create Block tool.",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build --webpack-copy-php --webpack-src-dir=blocks",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start --webpack-copy-php --webpack-src-dir=blocks",
+		"vite-dev": "vite",
+		"vite-build": "vite build"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-react": "^4.3.4",
+		"@wordpress/scripts": "^30.7.0",
+		"vite": "^6.0.7"
+	},
+	"dependencies": {
+		"@wordpress/components": "^29.2.0",
+		"@wordpress/element": "^6.14.0",
+		"autoprefixer": "^10.4.20",
+		"axios": "^1.7.9",
+		"postcss": "^8.5.2",
+		"tailwindcss": "^4.0.6"
+	}
+}

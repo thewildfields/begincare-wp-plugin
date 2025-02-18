@@ -1,0 +1,155 @@
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/providers-results/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+.providerCard {
+  background-color: white;
+  border-bottom: 1px solid #c7c7c7;
+  padding: var(--wp--preset--spacing--s);
+  padding-bottom: var(--wp--preset--spacing--m);
+  margin-bottom: var(--wp--preset--spacing--s);
+  display: grid;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  grid-template-columns: 100px auto;
+}
+.providerCard:last-child {
+  margin-bottom: 0;
+}
+.providerCard__results {
+  height: 100%;
+  overflow: auto;
+}
+.providerCard__avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #03b0e4;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+}
+.providerCard__avatar img {
+  width: 100%;
+  aspect-ratio: 1;
+}
+.providerCard__info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+}
+.providerCard__info p, .providerCard__info a {
+  margin: 0;
+  font-size: var(--wp--preset--font-size--m) !important;
+}
+.providerCard__info a {
+  text-decoration: underline;
+}
+.providerCard__header {
+  display: flex;
+  justify-content: space-between;
+}
+.providerCard .providerCard__avatar_mapView {
+  display: none;
+}
+.providerCard__title {
+  font-size: 2rem !important;
+  margin-top: 0 !important;
+  margin-bottom: var(--wp--preset--spacing--s) !important;
+  line-height: 1.2;
+}
+.providerCard__categories, .providerCard__address, .providerCard__distance, .providerCard__description {
+  font-size: var(--wp--preset--font-size--s) !important;
+  margin: 0 !important;
+}
+
+.providerResults__refineSearch {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+}
+
+.displayModeSwitch {
+  display: flex;
+  justify-content: flex-end;
+}
+.displayModeSwitch__button {
+  border-radius: 0;
+  border: 1px solid rgb(198, 198, 198);
+  background: white;
+  padding: 12px 16px;
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+.displayModeSwitch__button:first-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.displayModeSwitch__button:last-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.displayModeSwitch__button_active {
+  background-color: rgb(242, 242, 242);
+  color: rgb(0, 128, 255);
+}
+
+.providerResults__pageTitle {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+.providerResults__topLeft {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.providers__display {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 700px;
+}
+.providers__display .providers__map {
+  display: none;
+}
+.providers__display .providers__map #map-holder {
+  height: 100%;
+}
+.providers__display_mapView {
+  grid-template-columns: 1fr 2fr;
+}
+.providers__display_mapView .providerCard {
+  display: block;
+  padding: var(--wp--preset--spacing--s) !important;
+  margin: 0 !important;
+  cursor: pointer;
+}
+.providers__display_mapView .providerCard:hover {
+  background-color: #F4F4F4;
+}
+.providers__display_mapView .providerCard__avatar {
+  display: none;
+}
+.providers__display_mapView .providerCard .providerCard__avatar_mapView {
+  display: block;
+  height: 64px;
+  width: 64px;
+}
+.providers__display_mapView .providerCard__title {
+  font-size: var(--wp--preset--font-size--l) !important;
+}
+.providers__display_mapView .providerCard__info {
+  display: block;
+}
+.providers__display_mapView .providerCard__infoCard:not(:last-child) {
+  margin-bottom: 10px;
+}
+.providers__display_mapView .providerCard__content {
+  display: grid;
+  grid-template-columns: auto 64px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.providers__display_mapView .providers__map {
+  display: block;
+}

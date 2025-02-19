@@ -39,3 +39,14 @@ function ___bgp__register_admin_menu(){
 function ___bgp__begincare_callback(){
 	require_once plugin_dir_path( __FILE__ ) . '/inc/menupage.php';
 }
+
+function ___bgc__enqueue_frontend_assets() {
+	wp_enqueue_script(
+		'api-key',
+		'https://maps.googleapis.com/maps/api/js?key=AIzaSyAcE41Vjv5yIZN-vaXmc3oyVyPH1ksE3zE&libraries=places',
+		null,
+		null,
+	);
+}
+
+add_action('wp_enqueue_scripts', '___bgc__enqueue_frontend_assets');

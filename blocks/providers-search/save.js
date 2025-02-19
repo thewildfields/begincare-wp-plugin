@@ -5,7 +5,7 @@ export default function save({attributes}) {
 	const {targetPage, openResultsInNewPage, searchDisplay} = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: 'facilitySearch',
+		className: '___bc__providerSearch',
 	})
 
 	return (

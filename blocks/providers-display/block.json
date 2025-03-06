@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "begincare/providers-display",
+	"version": "0.1.0",
+	"title": "Providers Display",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"content": {
+			"type": "string",
+			"default": "search-results"
+		},
+		"resultsCount": {
+			"type": "integer",
+			"default": 10
+		},
+		"showResultsHeader": {
+			"type": "boolean",
+			"default": true
+		},
+		"showFilter": {
+			"type": "boolean",
+			"default": true
+		},
+		"views": {
+			"type": "string",
+			"default": "both"
+		}
+	},
+	"textdomain": "begincare",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php"
+}

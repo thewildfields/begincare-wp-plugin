@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function create_block_begincare_block_init() {
 	register_block_type( __DIR__ . '/build/providers-search' );
-	register_block_type( __DIR__ . '/build/providers-results' );
+	register_block_type( __DIR__ . '/build/providers-display' );
 }
 add_action( 'init', 'create_block_begincare_block_init' );
 

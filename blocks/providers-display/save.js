@@ -3,12 +3,12 @@ import { useBlockProps } from '@wordpress/block-editor';
 export default function save() {
 
 	const blockProps = useBlockProps.save({
-		className: 'facilitySearch__results'
+		className: '___bc__providersDisplay'
 	})
 	
 	return (
 		<div { ...blockProps }>
-			{ 'Begincare - search results!' }
+			{ 'Providers Display' }
 		</div>
 	);
 }

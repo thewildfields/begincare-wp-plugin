@@ -25,6 +25,10 @@
     "openResultsInNewPage": {
       "type": "boolean",
       "default": true
+    },
+    "categories": {
+      "type": "array",
+      "default": []
     }
   },
   "textdomain": "begincare",

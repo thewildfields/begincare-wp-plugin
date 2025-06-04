@@ -1,20 +1,25 @@
 <?php 
 
-$BCE = get_field('begincare_base_endpoint', 'option');
-$key = get_field('api_key', 'option');
+$begincareAPIEndpoint = get_option('begincare_api_url');
+$begincareAPIKey = get_option( 'begincare_api_key' );
 
 $queryParams = http_build_query([
     'addressState'  => $_GET['state'],
     'categories'    => $_GET['serviceId'],
+    'addressCity'   => $_GET['location'],
     'lat'   => $_GET['lat'],
     'lng'   => $_GET['lng'],
-    'begincareApiKey'   => $key,
+    'begincareApiKey'   => $begincareAPIKey,
     'origin' => home_url(),
     'limit' => $attributes['resultsCount']
 ]);
 
+$requestURL = $begincareAPIEndpoint.'providers/search?'.$queryParams;
+
+// print_r($requestURL);
+
 $providersResponse = wp_remote_get(
-    $BCE.'providers/search?'.$queryParams,
+    $requestURL,
     [
         'sslverify' => false,
     ]
@@ -34,7 +39,7 @@ if( !$resultsCount ){
     return;
 }
 
-$avatarPlaceholder = get_field('avatar-placeholder', 'option');
+$avatarPlaceholder = BCP_DIR_URL . '/blocks/providers-display/assets/logoPlaceholder.png';
 
 ?>
 
@@ -74,18 +79,20 @@ $avatarPlaceholder = get_field('avatar-placeholder', 'option');
 <div class="providers__display providers__display_mapView">
     <div class="providerCard__results">
         <?php foreach ($providers as $provider) { ?>
-            <div
+            <a
                 class="providerCard -rozshuk-markerSource"
                 location-lat="<?php echo $provider->locationLatitude; ?>"
                 location-lng="<?php echo $provider->locationLongitude; ?>"
+                href="<?php echo home_url(get_option("provider_page_slug").'?id='.$provider->_id); ?>"
+                target="_blank"
             >
                 <div class="providerCard__avatar">
-                    <img src="<?php echo wp_get_attachment_url( $avatarPlaceholder ); ?>" alt="">
+                    <img src="<?php echo $avatarPlaceholder; ?>" alt="">
                 </div>
                 <div class="providerCard__content">
                     <div class="providerCard__header">
                         <div class="providerCard__avatar">
-                            <img src="<?php echo wp_get_attachment_url( $avatarPlaceholder ); ?>" alt="">
+                    <img src="<?php echo $avatarPlaceholder; ?>" alt="">
                         </div>
                         <p class="providerCard__title">
                             <?php echo $provider->name; ?>
@@ -119,7 +126,7 @@ $avatarPlaceholder = get_field('avatar-placeholder', 'option');
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         <?php } ?>
     </div>
     <div class="providers__map">
